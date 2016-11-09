@@ -5,7 +5,7 @@ git config --global user.email "your email"
 4.提交文件三部曲:1.git add "filename",2.git commit -m "description info",3.git status 查看当前是否有文件被修改过，git diff 可以查看修改内容.
 5.版本回退指令:git log 用于查看提交历史记录，如果记录过多，可以使用git log --pretty=oneline 精简;
 git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退到上上一版本，git reset --hard HEAD~100 回退到上100个版本，git reset --hard "commit id" 回退到指定版本。git reflog 用于记录每一次的命令，含有commit id.
-
+6.git工作区有一个隐藏目录.git，这个其实是git的版本库，里面存储很多东西，最重要的称为stage(暂存区),还有git为我们自动创建的第一个分支master，以及指向master的一个指针HEAD,git的工作主要分为两个git add 时做的操作其实就是将文件修改添加到暂存区，git commit 提交更改，其实就是将暂存区的所有内容提交到当前分支。
 
 
 
