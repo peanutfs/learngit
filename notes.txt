@@ -3,5 +3,9 @@
 git config --global user.email "your email"
 3.创建本地版本库:git init
 4.提交文件三部曲:1.git add "filename",2.git commit -m "description info",3.git status 查看当前是否有文件被修改过，git diff 可以查看修改内容.
+5.版本回退指令:git log 用于查看提交历史记录，如果记录过多，可以使用git log --pretty=oneline 精简;
+git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退到上上一版本，git reset --hard HEAD~100 回退到上100个版本，git reset --hard "commit id" 回退到指定版本。git reflog 用于记录每一次的命令，含有commit id.
+
+
 
 
