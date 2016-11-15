@@ -6,6 +6,7 @@ git config --global user.email "your email"
 5.版本回退指令:git log 用于查看提交历史记录，如果记录过多，可以使用git log --pretty=oneline 精简;
 git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退到上上一版本，git reset --hard HEAD~100 回退到上100个版本，git reset --hard "commit id" 回退到指定版本。git reflog 用于记录每一次的命令，含有commit id.
 6.git工作区有一个隐藏目录.git，这个其实是git的版本库，里面存储很多东西，最重要的称为stage(暂存区),还有git为我们自动创建的第一个分支master，以及指向master的一个指针HEAD,git的工作主要分为两个git add 时做的操作其实就是将文件修改添加到暂存区，git commit 提交更改，其实就是将暂存区的所有内容提交到当前分支。
-7.关于撤销：a.git checkout -- filename 该指令的意思是将文件放在工作区的修改全部撤销，两种情况，一种是自文件修改后还没有被放到暂存区，那么撤销修改就是回到和版本库一模一样的状态;另一种是已经添加到暂存区后又做了修改，那么撤销修改就是回到添加暂存区后的状态，总之就是让文件回到最近一次git commit或git add的状态。b: 
+7.关于撤销：a.git checkout -- filename 该指令的意思是将文件放在工作区的修改全部撤销，两种情况，一种是自文件修改后还没有被放到暂存区，那么撤销修改就是回到和版本库一模一样的状态;另一种是已经添加到暂存区后又做了修改，那么撤销修改就是回到添加暂存区后的状态，总之就是让文件回到最近一次git commit或git add的状态。b: git reset HEAD filename 该指令用于已经将文件add到暂存区中那么可用该指令将暂存区中的修改撤销，再使用a指令将工作区的修改撤销。c:如果文件已经提交到本地版本库可以使用版本回退来撤销修改，如果已经放到服务器的版本库上，那就拜拜了。
+
 
 
