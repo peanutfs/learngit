@@ -8,5 +8,5 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 6.git工作区有一个隐藏目录.git，这个其实是git的版本库，里面存储很多东西，最重要的称为stage(暂存区),还有git为我们自动创建的第一个分支master，以及指向master的一个指针HEAD,git的工作主要分为两个git add 时做的操作其实就是将文件修改添加到暂存区，git commit 提交更改，其实就是将暂存区的所有内容提交到当前分支。
 7.关于撤销：a.git checkout -- filename 该指令的意思是将文件放在工作区的修改全部撤销，两种情况，一种是自文件修改后还没有被放到暂存区，那么撤销修改就是回到和版本库一模一样的状态;另一种是已经添加到暂存区后又做了修改，那么撤销修改就是回到添加暂存区后的状态，总之就是让文件回到最近一次git commit或git add的状态。b: git reset HEAD filename 该指令用于已经将文件add到暂存区中那么可用该指令将暂存区中的修改撤销，再使用a指令将工作区的修改撤销。c:如果文件已经提交到本地版本库可以使用版本回退来撤销修改，如果已经放到服务器的版本库上，那就拜拜了。
 8.删除文件：rm filename 直接删除文件，两种情况：a.确实要从版本库中将文件删除，那么就是使用git rm将文件删除;b.如果是误删，可以使用git checkout -- filename 将版本库上的文件在放到工作区。
-
+9.远程仓库：首先创建SSH Key.  ssh-keygen -t rsa -C "youremail@example.com"一路回车，在主目录下发现.ssh目录里面有id_rsa和id_rsa.pub两个文件，然后登录github上add ssh key 将id_rsa.pub文件的内容粘贴上去后结束，测试ssh key ssh git@github.com.
 
