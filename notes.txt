@@ -11,7 +11,9 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 9.远程仓库：首先创建SSH Key.  ssh-keygen -t rsa -C "youremail@example.com"一路回车，在主目录下发现.ssh目录里面有id_rsa和id_rsa.pub两个文件，然后登录github上add ssh key 将id_rsa.pub文件的内容粘贴上去后结束，测试ssh key ssh git@github.com.
 
 9.1.git remote add origin git@github.com:yourgithubname/repositoryname.git,该指令用于将本地库与远程库关联，此时远程库的名字就是origin(默认叫法）也可以换成别的;
+
     git push -u origin master ,git push 用于把本地库内容推送到远程，实际就是把当前分支master推送到远程，因远程库是空的，当第一次推送master分支时加上了-u参数，用于将本地master分支内容推送至远程新的master分支，还会八本地master分支和远程master
 关联起来，以后推送可简化。后期只需要使用git push origin master 即可把最新修改推送至github.
 10.从远程库克隆：git clone git@github.com:yourgithubname/repositoryname.git,其实git提供的地址不止一个，还可以用https://github.com/yourgithubname/repositoryname.git这样的地址，git默认使用的是git://使用ssh,但是也可以使用https等其他协议，ssh支持的原生git协议最快。
 
+11.git 分支，查看分支：git branch , 创建分支：git branch <name> ,切换分支：git checkout <name> ，创建+切换分支：git checkout -b <name> ,合并某分支到当前分支：git merge <name> , 删除分支：git branch -d <name>
