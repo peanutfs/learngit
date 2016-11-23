@@ -20,7 +20,8 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 
 12.解决分支冲突问题：当分支冲突时因先解决冲突然后再合并分支，git log --graph 可以查看分支合并图，如：git log --graph --pretty=oneline --abbrev-commit
 
-
 13.分支管理：合并分支时，如果可能git会用Fast Forward 模式，这种模式下，删除分支后，会丢掉分支信息。如果要强制禁用Fast Forward 模式，git 就会在merge时生成一个新的commit，这样，分支就可以记录历史
    git merge --no-ff -m "description" <branch name>
 在实际开发中，应该避免在master分支上开发，而应该在dev分支上开发，每个人都有一个自己的分支，时不时向dev分支合并代码即可，到版本发布时再向master分支合并。
+
+14.bug分支：软件开发是出现需要修复的bug可以通过新建一个bug临时分支来修复，修复后，合并分支，然后再将分支删除。当你当前的工作不能提交但你又要解决bug时，可以通过 git stash 将当前的工作现场“存储”起来，等bug解决以后再恢复继续工作，恢复存储的工作现场有两种方式，1：git stash apply,这种恢复方式恢复后stash的内容不会删除，需要用git stash drop来删除，2：git stash pop 恢复的同时把stash的内容也删除了。git stash list用于查看stash的内容。可以多次stash，恢复时先使用git stash list 查看，然后恢复指定的stash-->git stash apply stash@{0}.
