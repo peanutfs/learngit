@@ -27,3 +27,6 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 14.bug分支：软件开发是出现需要修复的bug可以通过新建一个bug临时分支来修复，修复后，合并分支，然后再将分支删除。当你当前的工作不能提交但你又要解决bug时，可以通过 git stash 将当前的工作现场“存储”起来，等bug解决以后再恢复继续工作，恢复存储的工作现场有两种方式，1：git stash apply,这种恢复方式恢复后stash的内容不会删除，需要用git stash drop来删除，2：git stash pop 恢复的同时把stash的内容也删除了。git stash list用于查看stash的内容。可以多次stash，恢复时先使用git stash list 查看，然后恢复指定的stash-->git stash apply stash@{0}.
 
 15.开发一个新功能，最好新建一个分支，如果需要丢弃一个未被合并的分支，可以通过git branch -D <branch name>
+
+16.多人协作开发的一般模式：a.可以先试图用git push origin branch-name 推送自己的修改，b.如果推送失败，则因为远程分支比你本的要新，需要先用git pull试图合并，c.如果合并有冲突，则先解决冲突，然后本地提交，d.没有冲突或者解决掉冲突后,再用git push origin branch-name 推送即可。注：如果git pull 提示"no tracking infomation",则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name 创建链接关系。
+另：查看远程库信息使用git remote -v 本地新建的分钟如果不推送到远程，对其他人就是不可见的。
