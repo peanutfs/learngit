@@ -32,3 +32,4 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 另：查看远程库信息使用git remote -v 本地新建的分钟如果不推送到远程，对其他人就是不可见的。
 
 17.标签管理：发布一个版本时通常现在版本库中打一个标签，这样就唯一确定了大标签时候的版本，标签是版本库的一个快照，标签其实就是指向某个commit的指针，该指针不能移动
+创建标签：git tag <tag name> 默认为HEAD(最近一次commit)，也可以指定一个commit idgit tag <tag name> commit id , git tag -a <tagname> -m "description info" 可以指定标签信息，git tag -s <tagname> -m "description info"可以用PGP签名标签，git tag 可以查看所有标签，git show tagname 可以查看指定标签的信息。
