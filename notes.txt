@@ -19,3 +19,5 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 11.git 分支，查看分支：git branch , 创建分支：git branch <name> ,切换分支：git checkout <name> ，创建+切换分支：git checkout -b <name> ,合并某分支到当前分支：git merge <name> , 删除分支：git branch -d <name>
 
 12.解决分支冲突问题：当分支冲突时因先解决冲突然后再合并分支，git log --graph 可以查看分支合并图，如：git log --graph --pretty=oneline --abbrev-commit
+
+13.bug分支：软件开发是出现需要修复的bug可以通过新建一个bug临时分支来修复，修复后，合并分支，然后再将分支删除。当你当前的工作不能提交但你又要解决bug时，可以通过 git stash 将当前的工作现场“存储”起来，等bug解决以后再恢复继续工作，恢复存储的工作现场有两种方式，1：git stash apply,这种恢复方式恢复后stash的内容不会删除，需要用git stash drop来删除，2：git stash pop 恢复的同时把stash的内容也删除了。git stash list用于查看stash的内容。可以多次stash，恢复时先使用git stash list 查看，然后恢复指定的stash-->git stash apply stash@{0}.
