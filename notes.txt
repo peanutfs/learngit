@@ -35,3 +35,5 @@ git reset --hard HEAD^ 回退到上一个版本，git reset --hard HEAD^^ 回退
 创建标签：git tag <tag name> 默认为HEAD(最近一次commit)，也可以指定一个commit idgit tag <tag name> commit id , git tag -a <tagname> -m "description info" 可以指定标签信息，git tag -s <tagname> -m "description info"可以用PGP签名标签，git tag 可以查看所有标签，git show tagname 可以查看指定标签的信息。
 
 18.git push origin <tagname> 可以推送一个本地标签，git push origin --tags 可以推送全部未推送过的本地标签，git tag -d <tagname> 可以删除一个本地标签，如果本地标签已经被推送到远程库，可以先删除本地标签，然后使用git push origin :refs/tags/<tagname> 删除一个远程标签。
+
+19.关于github:如果想在github上贡献代码，可以访问别人项目主页，点击Fork在自己的帐号下克隆一个该项目仓库，再将该项目clone到本地修改后push到远程仓库，然后可以在github上发起一个pull request 给原项目主审核，对方确认后即可贡献代码。
